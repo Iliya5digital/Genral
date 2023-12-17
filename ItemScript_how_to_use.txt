@@ -1,0 +1,38 @@
+create new class enter the prev class in link
+go to PacketHandler.cs || MsgItemHandler.cs
+searchFor public static void UseItem(
+go to Default:
+under it put this code
+ItemHandlerScript.Handle(item, client);
+but be careful you put it before break;
+then this is DB
+/*
+Navicat MySQL Data Transfer
+Source Host     : localhost:3306
+Source Database : emulator
+Target Host     : localhost:3306
+Target Database : emulator
+Date: 8/24/2017 7:00:08 AM
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+-- ----------------------------
+-- Table structure for itemscript
+-- ----------------------------
+DROP TABLE IF EXISTS `itemscript`;
+CREATE TABLE `itemscript` (
+  `useitemid` int(32) unsigned NOT NULL DEFAULT '0',
+  `removeused` smallint(8) unsigned DEFAULT '0',
+  `giveitemid` int(32) unsigned DEFAULT '0',
+  `givecount` smallint(8) unsigned DEFAULT '1',
+  `actionid` int(16) unsigned DEFAULT '0',
+  `removecount` smallint(8) unsigned DEFAULT '1',
+  `chance` int(32) unsigned DEFAULT '0',
+  `giveitemplus` smallint(8) unsigned DEFAULT '0',
+  PRIMARY KEY (`useitemid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of itemscript
+-- ----------------------------
+INSERT INTO `itemscript` VALUES ('3003108', '1', '3001283', '5', '0', '1', '0', '0');

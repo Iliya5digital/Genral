@@ -1,0 +1,26 @@
+<?php 
+
+$serveraddress='46.105.43.166';
+$serverport='5819';
+$dbhost='46.105.43.166'; //Hostname
+$dbuser='root'; //MySql User
+$dbpasswd='123a'; //MySql Password
+$dbname='maxs'; //DB For accounts
+$description='caribbean Conquer'; // server description
+$servername='caribbean Conquer'; // Server name appear on pages titles
+$serverdesc='Official Website';
+//////////////////////////////////////////////////////////
+$rs = mysql_connect('127.0.0.1', $dbuser, $dbpasswd) or die(mysql_error());
+
+mysql_select_db($dbname,$rs) or die(mysql_error());
+
+if ($_GET['act']=='logout'){
+	session_destroy();
+	?>
+	<META HTTP-EQUIV="REFRESH" CONTENT="1;URL=index.php">
+	<?php
+}
+
+$acc=$_SESSION['acc'];
+$uid=$_SESSION['uid'];
+?>
